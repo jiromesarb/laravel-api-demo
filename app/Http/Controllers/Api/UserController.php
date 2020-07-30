@@ -57,7 +57,6 @@ class UserController extends Controller
         $request['password'] = bcrypt($password);
 
         // Insert data
-        // return $request->all();
         if(User::create($request->all())){
 
 			$params = [
@@ -149,7 +148,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        // return $id;
         if(User::where('id', $id)->delete()){
 
             return apiReturn($id, 'Successfully Deleted!');

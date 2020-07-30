@@ -15,14 +15,11 @@ use App\User;
 class LoginController extends Controller
 {
     public function login(Request $request){
-        // return $request->all();
         $creds = [
             'email' => $request['email'],
             'password' => $request['password'],
         ];
-        // return $creds;
 
-        // $token = JWTAuth::attempt($creds, $rememeber = true);
         if(!$token = JWTAuth::attempt($creds)){
             return apiReturn($creds, 'Incorrect Email/Password', 'failed');
         }

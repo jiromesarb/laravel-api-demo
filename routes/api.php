@@ -40,6 +40,5 @@ Route::get('/person', function(){
         'last_name' => 'Doe',
     ];
 
-    // return response()->json(['upload_file_not_found'], 400);
     return $person;
 });
